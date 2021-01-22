@@ -14,4 +14,9 @@ class link extends Model
         $this->count++;
         $this->save();
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
