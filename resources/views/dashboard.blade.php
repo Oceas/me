@@ -5,5 +5,5 @@
         </h2>
     </x-slot>
     <livewire:links-table/>
-    <button wire:click="$emit('postAdded')">Edit</button>
-</x-app-layout>
+</x-app-layout
+>

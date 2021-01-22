@@ -12,6 +12,8 @@ class NewLink extends Component
 
     public $source = '';
 
+    public $alternative = '';
+
     public $show_new_link = false;
 
     protected $listeners = ['show_new_link_modal' => 'show_new_link_modal'];
@@ -19,11 +21,17 @@ class NewLink extends Component
     protected $rules = [
         'name' => 'required',
         'source' => 'required',
+        'alternative' => 'required|unique:links',
     ];
 
     public function show_new_link_modal()
     {
         $this->show_new_link = true;
+    }
+
+    public function hide_new_link_modal()
+    {
+        $this->show_new_link = false;
     }
 
     public function render()
@@ -34,22 +42,23 @@ class NewLink extends Component
     public function submit_form()
     {
         $link_details = $this->validate($this->rules);
-        \Log::info(print_r((object) array(
-            'line' => __LINE__,
-            'file' => __FILE__,
-            'dump' => array(
-                $link_details['name'],
-            ),
-        ), true));
         $link = new \App\Models\link([
             'user_id' => \Auth::user()->id,
             'name' => $link_details['name'],
             'source' => $link_details['source'],
-            'alternative' => 'memebigboy',
+            'alternative' =>  $link_details['alternative'],
             'count' => 0,
         ]);
         $link->save();
-        $this->show_new_link = false;
+        $this->hide_new_link_modal();
+        $this->clear_form();
         $this->emit('load_links');
+    }
+
+    public function clear_form()
+    {
+        $this->name = '';
+        $this->source = '';
+        $this->alternative = '';
     }
 }
