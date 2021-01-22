@@ -15,7 +15,7 @@
                 <td><a href='{{$link->source}}'>{{$link->source}}</a></td>
                 <td><a href='https://me.bork/l/{{$link->alternative}}' target="_blank">{{$link->alternative}}</a></td>
                 <td>{{$link->count}}
-                <td><button class="btn btn-primary" wire:click="$emit('postAdded')">Edit</button></td>
+                <td><button class="btn btn-primary" wire:click="$emit('postAdded')" disabled>Edit</button></td>
             </tr>
         @endforeach
     </tbody>
