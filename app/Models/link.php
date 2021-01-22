@@ -9,6 +9,8 @@ class link extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function count_visit()
     {
         $this->count++;

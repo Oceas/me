@@ -3,13 +3,14 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class NewLink extends Component
 {
 
-    public $name = 'test';
+    public $name = '';
 
-    public $source = 'source source';
+    public $source = '';
 
     public $show_new_link = false;
 
@@ -22,14 +23,6 @@ class NewLink extends Component
 
     public function show_new_link_modal()
     {
-        \Log::info(print_r((object) array(
-            'line' => __LINE__,
-            'file' => __FILE__,
-            'dump' => array(
-                'I did get called',
-            ),
-        ), true));
-
         $this->show_new_link = true;
     }
 
@@ -40,23 +33,23 @@ class NewLink extends Component
 
     public function submit_form()
     {
-        \Log::info(print_r((object) array(
-            'line' => __LINE__,
-            'file' => __FILE__,
-            'dump' => array(
-                'testing',
-                'here',
-                $this->name,
-            ),
-        ), true));
         $link_details = $this->validate($this->rules);
         \Log::info(print_r((object) array(
             'line' => __LINE__,
             'file' => __FILE__,
             'dump' => array(
-                'also here',
+                $link_details['name'],
             ),
         ), true));
+        $link = new \App\Models\link([
+            'user_id' => \Auth::user()->id,
+            'name' => $link_details['name'],
+            'source' => $link_details['source'],
+            'alternative' => 'memebigboy',
+            'count' => 0,
+        ]);
+        $link->save();
         $this->show_new_link = false;
+        $this->emit('load_links');
     }
 }

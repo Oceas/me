@@ -9,9 +9,16 @@ class LinksTable extends Component
 
     public $links;
 
+    protected $listeners = ['load_links'];
+
     public function render()
     {
-        $this->links = \Auth::user()->links()->get();
+        $this->load_links();
         return view('livewire.links-table');
+    }
+
+    public function load_links()
+    {
+        $this->links = \Auth::user()->links()->get();
     }
 }

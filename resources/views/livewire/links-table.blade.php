@@ -11,7 +11,7 @@
         @foreach ($links as $link)
             <tr>
                 <td>{{$link->source}}</td>
-                <td><a href='https://me.bork/l/{{$link->alternative}}'>{{$link->alternative}}</a></td>
+                <td><a href='https://me.bork/l/{{$link->alternative}}' target="_blank">{{$link->alternative}}</a></td>
                 <td>{{$link->count}}
                 <button wire:click="$emit('postAdded')">Edit</button>
             </tr>
