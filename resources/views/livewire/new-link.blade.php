@@ -12,7 +12,6 @@
                         {{$errors}}
                     @endif
                     <div class="mb-3">
-                        {{$name}}
                         <label for="name" class="form-label">Name</label>
                         <input id="name" wire:model='name' name='name' type="text" class="form-control">
                         <div class="form-text">Private name to describe the ilnk.</div>

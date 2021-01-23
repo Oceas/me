@@ -20,7 +20,7 @@ class NewLink extends Component
 
     protected $rules = [
         'name' => 'required',
-        'source' => 'required',
+        'source' => 'required|url',
         'alternative' => 'required|unique:links',
     ];
 

@@ -5,5 +5,5 @@
         </h2>
     </x-slot>
     <livewire:links-table/>
-</x-app-layout
->
+    <livewire:edit-link-modal/>
+</x-app-layout>
