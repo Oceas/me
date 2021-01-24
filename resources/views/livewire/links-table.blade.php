@@ -13,7 +13,7 @@
             <tr>
                 <td>{{$link->name}}</td>
                 <td><a href='{{$link->source}}'>{{$link->source}}</a></td>
-                <td><a href='https://me.bork/l/{{$link->alternative}}' target="_blank">{{$link->alternative}}</a></td>
+                <td><a href='{{env('APP_URL')}}/l/{{$link->alternative}}' target="_blank">{{$link->alternative}}</a></td>
                 <td>{{$link->count}}
                 <td><button class="btn btn-primary" wire:click="$emit('edit_link', {{$link->id}})">Edit</button></td>
             </tr>
