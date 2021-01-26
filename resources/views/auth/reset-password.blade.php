@@ -38,7 +38,7 @@
                                     name="password_confirmation" required />
             </div>
 
-            <div class=" mb-3">
+            <div class="mb-3">
                 <x-button class='btn btn-primary'>
                     {{ __('Reset Password') }}
                 </x-button>
