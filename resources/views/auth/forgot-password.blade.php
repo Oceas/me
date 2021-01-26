@@ -20,14 +20,15 @@
             @csrf
 
             <!-- Email Address -->
-            <div>
+            <div class='mb-3'>
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
+
+            <div class="row mb-3">
+                <x-button class='btn btn-primary'>
                     {{ __('Email Password Reset Link') }}
                 </x-button>
             </div>
