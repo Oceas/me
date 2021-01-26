@@ -39,7 +39,7 @@
                     @endif
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="mb-3">
                 <x-button class="btn btn-primary">
                     {{ __('Login') }}
                 </x-button>

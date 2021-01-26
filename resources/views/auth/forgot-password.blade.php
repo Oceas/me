@@ -27,7 +27,7 @@
             </div>
 
 
-            <div class="row mb-3">
+            <div class="mb-3">
                 <x-button class='btn btn-primary'>
                     {{ __('Email Password Reset Link') }}
                 </x-button>

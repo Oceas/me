@@ -48,7 +48,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
+            <div class="mb-3">
                 <x-button class="ml-4 btn btn-primary">
                     {{ __('Register') }}
                 </x-button>
