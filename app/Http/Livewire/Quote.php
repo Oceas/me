@@ -13,6 +13,10 @@ class Quote extends Component
     public function render()
     {
         $this->quote = ModelsQuote::inRandomOrder()->first();
+
+        if (null === $this->quote) {
+            return '<p></p>';
+        }
         return view('livewire.quote');
     }
 }
