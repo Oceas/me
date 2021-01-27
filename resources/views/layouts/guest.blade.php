@@ -31,7 +31,7 @@
         <div class="h-100 d-flex align-items-center">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">{{ __('Inspirational quotes will go here.') }}</div>
+                    <div class="col-md-4"<livewire:quote/></div>
                     <div class="col-md-8">{{ $slot }}</div>
                 </div>
             </div>
