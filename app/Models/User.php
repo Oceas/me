@@ -46,4 +46,33 @@ class User extends Authenticatable
     {
         return $this->hasMany(link::class);
     }
+
+    public function metaData()
+    {
+        return $this->hasMany(UserMeta::class);
+    }
+
+    public function get_biography()
+    {
+        return $this->get_meta_value('biography');
+    }
+
+    public function set_biography($biography)
+    {
+        return $this->set_meta_value('biography', $biography);
+    }
+
+    private function get_meta_value($meta_key)
+    {
+        $value = optional($this->metaData()->where('meta_key', $meta_key)->first())->meta_value;
+        return null === $value ? '' : $value;
+    }
+
+    private function set_meta_value($meta_key, $meta_value)
+    {
+        UserMeta::updateOrCreate(
+            ['user_id' => $this->id, 'meta_key' => $meta_key],
+            ['meta_value' => $meta_value]
+        );
+    }
 }
