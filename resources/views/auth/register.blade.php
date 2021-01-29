@@ -7,18 +7,26 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
+
             <!-- Name -->
             <div class='mb-3'>
                 <x-label for="name" :value="__('Name')" />
 
-                <x-input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="name" class="form-control" type="text" name="name" :value="old('name')" placeholder='Joe Exotic' required autofocus />
+            </div>
+
+            <!-- Name -->
+            <div class='mb-3'>
+                <x-label for="username" :value="__('Username')" />
+
+                <x-input id="username" class="form-control" type="text" name="username" :value="old('username')" placeholder='ubercoder9001' required autofocus />
             </div>
 
             <!-- Email Address -->
             <div class="mb-3">
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required />
+                <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" placeholder='me@protonmail.com' required />
             </div>
 
             <!-- Password -->
