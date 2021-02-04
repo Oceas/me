@@ -13,17 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get('/profile', 'ProfileController@index')->name('profile');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/profile', function () {
-    return view('profile');
-})->middleware(['auth'])->name('profile');
+Route::group(['prefix' => 'u'], function () {
+    Route::get('{username}', 'ProfileController@show');
+});
 
 Route::group(['prefix' => 'l'], function () {
     Route::get('{guid}', 'LinkController@link');
