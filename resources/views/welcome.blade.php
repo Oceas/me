@@ -30,12 +30,17 @@
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                            <a href="{`{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
-            <div style="color:#fff;">A lot more coming soon</div>
+            <div style="color:#fff; text-align:center;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ai5Ha6iBcpg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Me. A platform to share your work and track your links.</p>
+                <p>New features coming every <a style="text-decoration:underline;" href="https://twitter.com/search?q=%235ftf&src=typed_query">#5ftf</a></p>
+                <p><a style="text-decoration:underline;" href="https://github.com/Oceas/me/discussions/categories/ideas">Got an idea?</a>
+            </div>
         </div>
     </body>
 </html>
