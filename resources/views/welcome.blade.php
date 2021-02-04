@@ -23,7 +23,7 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
                     @else
@@ -35,7 +35,7 @@
                     @endauth
                 </div>
             @endif
-            <div style="color:#fff; text-align:center;">
+            <div style="color:#fff; text-align:center;margin-top:50px;">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/ai5Ha6iBcpg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <p>Me. A platform to share your work and track your links.</p>
                 <p>New features coming every <a style="text-decoration:underline;" href="https://twitter.com/search?q=%235ftf&src=typed_query">#5ftf</a></p>
