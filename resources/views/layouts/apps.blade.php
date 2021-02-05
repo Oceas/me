@@ -35,7 +35,9 @@
             <!-- Page Content -->
             <div class="container p-4">
                 <main>
-                    {{ $slot }}
+                    <div>
+                        {{ $slot }}
+                    </div>
                 </main>
             </div>
         </div>

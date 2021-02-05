@@ -9,4 +9,6 @@
         </div>
     </x-slot>
     <livewire:profile-basics/>
+    {{--<livewire:social-links/>--}}
+
 </x-app-layout>
