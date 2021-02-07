@@ -20,7 +20,9 @@
                     {{ Auth::user()->name }}
                   </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{{ route('profile') }}">Profile</a></li>
+                    @if( ! env('DISABLE_PROFILE') )
+                        <li><a class="dropdown-item" href="{{ route('profile') }}">Profile</a></li>
+                    @endif
                     <li><hr class="dropdown-divider"></li>
                     <li>
                         <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); console.log('lol'); document.getElementById('logout').submit();">Logout</a></li>
