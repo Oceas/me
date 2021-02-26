@@ -3,14 +3,19 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class ProfileBasics extends Component
 {
     public $biography = '';
     public $updated = false;
+    public $profile_picture;
+
+    use WithFileUploads;
 
     protected $rules = [
-        'biography'  => 'string|nullable',
+        'biography'       => 'string|nullable',
+        'profile_picture' => 'image|max:5120'
     ];
 
     public function mount()
@@ -27,6 +32,7 @@ class ProfileBasics extends Component
     {
         $this->validate();
         \Auth::user()->set_biography($this->biography);
+        \Auth::user()->set_profile_picture($this->profile_picture->store('public/profile_picture'));
         $this->updated = true;
     }
 }
