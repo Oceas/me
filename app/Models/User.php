@@ -62,6 +62,16 @@ class User extends Authenticatable
         return $this->set_meta_value('biography', $biography);
     }
 
+    public function get_profile_picture()
+    {
+        return $this->get_meta_value('profile_picture');
+    }
+
+    public function set_profile_picture($profile_picture_url)
+    {
+        return $this->set_meta_value('profile_picture', str_replace("public/", "", $profile_picture_url));
+    }
+
     private function get_meta_value($meta_key)
     {
         $value = optional($this->metaData()->where('meta_key', $meta_key)->first())->meta_value;
