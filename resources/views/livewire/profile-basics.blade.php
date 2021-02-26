@@ -18,8 +18,7 @@
                     </div>
                     <div class="col-4 form-group">
                         <div>
-                                <img src="{{url(\Auth::user()->get_profile_picture()) }}" style="width:200px; height:200px;" class="rounded-circle"/>
-
+                            <img src="{{url(\Auth::user()->get_profile_picture()) }}" style="width:200px; height:200px;" class="rounded-circle"/>
                         </div>
                         <a class="mt-5" data-bs-toggle="collapse" data-bs-target="#profile_picture_upload" aria-expanded="false" aria-controls="profile_picture_upload">
                             Change Picture
