@@ -17,6 +17,7 @@
                         @endif
                     </div>
                     <div class="col-4 form-group">
+                        {{$profile_picture}}
                         <div>
                             <img src="{{url(\Auth::user()->get_profile_picture()) }}" style="width:200px; height:200px;" class="rounded-circle"/>
                         </div>
