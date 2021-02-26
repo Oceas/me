@@ -15,7 +15,7 @@ class ProfileBasics extends Component
 
     protected $rules = [
         'biography'       => 'string|nullable',
-        'profile_picture' => 'image|max:5120'
+        'profile_picture' => ''
     ];
 
     public function mount()
